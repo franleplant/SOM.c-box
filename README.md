@@ -64,7 +64,21 @@ cat README.md
 
 You'll see the instructions there.
 
+## Running SOM.c code
 
+This machine will automatically download the SOM.c code inside
+`shared/SOM`
+
+To run it
+
+```bash
+vagrant up && vagrant ssh
+cd shared/SOM
+# compile
+make
+# run it
+./main
+```
 
 ## Common tasks withing Linux
 
