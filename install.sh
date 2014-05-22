@@ -4,7 +4,7 @@ apt-get update
 sudo apt-get -y install python-software-properties
 add-apt-repository ppa:git-core/ppa
 apt-get update
-apt-get install -y gcc gdb valgrind libc6-prof make pkg-config git vim
+apt-get install -y gcc gdb valgrind libc6-prof make pkg-config git vim libgsl0*
 
 # Install GSL GNU numeric library
 cd /tmp
