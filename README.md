@@ -40,6 +40,12 @@ vagrant up && vagrant ssh
 `vagrant ssh` gets you inside the VM console.
 
 
+## Shared folders
+
+The `shared` directory in your host machine is synced with `home/vagrant/shared` directory
+in your guest machine (VM) so you can work with the files inside your VM directly in windows 
+
+
 ## Test your installation
 
 ```bash
