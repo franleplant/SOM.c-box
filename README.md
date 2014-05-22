@@ -13,6 +13,14 @@ Download and Install
 2. [Vagrant](http://www.vagrantup.com/downloads.html)
 
 
+**Note about issues in Windows**
+
+If when you type `vagrant up` you get the an error regarding `VBoxManage` then here is the solution:
+
+1. Find out where VirtualBox has been installed (In my pc it was: `C:\Program Files\Oracle\VirtualBox`)
+2. Copy the path and add it to `path` environment variable
+
+
 ## Open the terminal and type:
 
 ```bash
