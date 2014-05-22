@@ -14,3 +14,9 @@ cd gsl-1.15
 ./configure 
 make
 sudo make install
+
+
+#Clone the repo
+
+cd /home/vagrant/shared
+git clone https://github.com/franleplant/SOM.c.git SOM
