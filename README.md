@@ -28,7 +28,7 @@ Ubuntu, gcc, vim, git, some other useful libraries.
 > This process might take a while since its need to download
 a fresh copy of Ubuntu 12.04 (250 MB).
 
-##Access the Virtual Machine
+## Access the Virtual Machine
 
 ```bash
 cd SOM-box
@@ -39,6 +39,20 @@ vagrant up && vagrant ssh
 
 `vagrant ssh` gets you inside the VM console.
 
+
+## Test your installation
+
+```bash
+vagrant up && vagrant ssh
+cd shared/hello_world
+cat README.md
+```
+
+You'll see the instructions there.
+
+
+
+## Common tasks withing Linux
 
 
 ### Install dependencies
@@ -65,3 +79,18 @@ apt-cache search keywords
 dpkg --get-selections | grep 'package_name'
 ```
 Let `'package_name'` be the first n letters of the package name
+
+
+### Note about backticks
+
+Sometimes in your makefiles you'll need to run something like
+
+```bash
+`pkg-config --libs gsl`
+```
+
+if you detect that it does not evaluate your should use this syntax instead
+
+```bash
+$(shell pkg-config --libs gsl)
+```
