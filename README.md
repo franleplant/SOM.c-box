@@ -147,8 +147,6 @@ You will only need to change `vagrantfile`
 
 
 
-
-
 Now reboot your VM with `vagrant reload`.
 
 You should see the Virtual Box GUI and the Ubuntu GUI.
@@ -163,6 +161,11 @@ sudo /usr/share/debconf/fix_db.pl
 sudo dpkg --configure -a
 ```
 [More info](https://bugs.launchpad.net/ubuntu/+source/dictionaries-common/+bug/1310271)
+
+
+> ISSUE with Virtual Guest Addition: If the integration does not work right out of the box you should
+tell virtual box to install it again, restart your VM and it should work
+
 
 ### Links
 
