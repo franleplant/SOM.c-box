@@ -122,3 +122,52 @@ if you detect that it does not evaluate your should use this syntax instead
 ```bash
 $(shell pkg-config --libs gsl)
 ```
+
+
+
+## Notes about GUI
+
+Please do not do this unless its completely necessary.
+It will take about 4 hours so leave it all night.
+
+How to add GUI to you all console VM?
+
+```bash
+sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
+# Update all references
+sudo apt-get update
+# Upgrade all installed dependencies
+sudo apt-get upgrade
+# Install GUI
+sudo apt-get install xubuntu-desktop
+```
+
+You'll want to create a `.sh` file and let the computer do the work over a night.
+
+You will also need to change `vagrantfile`
+
+```ruby
+  config.vm.provider :virtualbox do |vb|
+
+    vb.gui = true
+    ...
+  end
+```
+
+`true` means "show Virtual box interface"
+
+`false` means default console behavior.
+
+
+
+Now reboot your VM with `vagrant halt` and `vagrant up`.
+
+You should see the Virtual Box GUI and the Ubuntu GUI.
+
+> NOTE: the credentials are vagrant/vagrant
+
+### Links
+
+- [Add Multiverse and Universe repos](http://askubuntu.com/questions/148638/how-do-i-enable-the-universe-repository)
+- [Install GUI](http://www.ubuntugeek.com/how-to-install-gui-on-ubuntu-12-04-precise-server.html)
+- [Webmin](http://www.ubuntugeek.com/install-gui-in-ubuntu-server.html)
