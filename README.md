@@ -130,21 +130,8 @@ $(shell pkg-config --libs gsl)
 Please do not do this unless its completely necessary.
 It will take about 4 hours so leave it all night.
 
-How to add GUI to you all console VM?
 
-```bash
-sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
-# Update all references
-sudo apt-get update
-# Upgrade all installed dependencies
-sudo apt-get upgrade
-# Install GUI
-sudo apt-get install xubuntu-desktop
-```
-
-You'll want to create a `.sh` file and let the computer do the work over a night.
-
-You will also need to change `vagrantfile`
+You will only need to change `vagrantfile`
 
 ```ruby
   config.vm.provider :virtualbox do |vb|
@@ -162,39 +149,25 @@ You will also need to change `vagrantfile`
 
 
 
-Now reboot your VM with `vagrant halt` and `vagrant up`.
+Now reboot your VM with `vagrant reload`.
 
 You should see the Virtual Box GUI and the Ubuntu GUI.
 
 
-## Alternative way
-
-Follow up the main answer to this [Stack Overflow question](http://stackoverflow.com/questions/18878117/using-vagrant-to-run-virtual-machines-with-desktop-environment).
-
-It have tested it and it works, its much faster than the method above.
-
 > NOTE: the credentials are vagrant/vagrant
 
-## Better alternative way
 
-I preffer this way because is fastest and installs a very light weight
-desktop GUI but with the minium capabilities required.
-It also works with Virtual Guest Additions
-
+> ISSUE with Dictionaries: I have encountered issues in the install process, particularly in the `dictionaries` package that caused the entire installation to fail, luckily I found a pretty easy and straight forward solution
 ```bash
-sudo apt-get -y install python-software-properties
-sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
-sudo apt-get update
-sudo apt-get install build-essential linux-headers-`uname -r` dkms
-sudo apt-get install xubuntu-desktop
+sudo /usr/share/debconf/fix_db.pl
+sudo dpkg --configure -a
 ```
-
-It will take about 40 minutes to complete.
-
-Make sure to install Virtual Guest Additions after this and re start your machine.
+[More info](https://bugs.launchpad.net/ubuntu/+source/dictionaries-common/+bug/1310271)
 
 ### Links
 
 - [Add Multiverse and Universe repos](http://askubuntu.com/questions/148638/how-do-i-enable-the-universe-repository)
 - [Install GUI](http://www.ubuntugeek.com/how-to-install-gui-on-ubuntu-12-04-precise-server.html)
 - [Webmin](http://www.ubuntugeek.com/install-gui-in-ubuntu-server.html)
+- [Stack Overflow on GUI](http://stackoverflow.com/questions/18878117/using-vagrant-to-run-virtual-machines-with-desktop-environment)
+- [Bug on Dictionaries installer](https://bugs.launchpad.net/ubuntu/+source/dictionaries-common/+bug/1310271)

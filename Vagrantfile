@@ -15,7 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 
   config.vm.provider :virtualbox do |vb|
-    # Don't boot with headless mode
+    # Turn this into true when you want GUI
     vb.gui = false
   
 	vb.memory = 1024
