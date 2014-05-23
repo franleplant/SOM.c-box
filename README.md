@@ -160,11 +160,38 @@ You will also need to change `vagrantfile`
 
 
 
+
+
 Now reboot your VM with `vagrant halt` and `vagrant up`.
 
 You should see the Virtual Box GUI and the Ubuntu GUI.
 
+
+## Alternative way
+
+Follow up the main answer to this [Stack Overflow question](http://stackoverflow.com/questions/18878117/using-vagrant-to-run-virtual-machines-with-desktop-environment).
+
+It have tested it and it works, its much faster than the method above.
+
 > NOTE: the credentials are vagrant/vagrant
+
+## Better alternative way
+
+I preffer this way because is fastest and installs a very light weight
+desktop GUI but with the minium capabilities required.
+It also works with Virtual Guest Additions
+
+```bash
+sudo apt-get -y install python-software-properties
+sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
+sudo apt-get update
+sudo apt-get install build-essential linux-headers-`uname -r` dkms
+sudo apt-get install xubuntu-desktop
+```
+
+It will take about 40 minutes to complete.
+
+Make sure to install Virtual Guest Additions after this and re start your machine.
 
 ### Links
 
