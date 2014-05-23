@@ -127,9 +127,6 @@ $(shell pkg-config --libs gsl)
 
 ## Notes about GUI
 
-Please do not do this unless its completely necessary.
-It will take about 4 hours so leave it all night.
-
 
 You will only need to change `vagrantfile`
 
