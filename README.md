@@ -149,10 +149,10 @@ Now reboot your VM with `vagrant reload`.
 You should see the Virtual Box GUI and the Ubuntu GUI.
 
 
-> NOTE: the credentials are vagrant/vagrant
+> **NOTE:** the credentials are vagrant/vagrant
 
 
-> ISSUE with Dictionaries: I have encountered issues in the install process, particularly in the `dictionaries` package that caused the entire installation to fail, luckily I found a pretty easy and straight forward solution
+> **ISSUE with Dictionaries:** I have encountered issues in the install process, particularly in the `dictionaries` package that caused the entire installation to fail, luckily I found a pretty easy and straight forward solution
 ```bash
 sudo /usr/share/debconf/fix_db.pl
 sudo dpkg --configure -a
@@ -160,7 +160,7 @@ sudo dpkg --configure -a
 [More info](https://bugs.launchpad.net/ubuntu/+source/dictionaries-common/+bug/1310271)
 
 
-> ISSUE with Virtual Guest Addition: If the integration does not work right out of the box you should
+> **ISSUE with Virtual Guest Addition:** If the integration does not work right out of the box you should
 tell virtual box to install it again, restart your VM and it should work
 
 
