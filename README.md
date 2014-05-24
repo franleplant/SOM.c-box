@@ -47,6 +47,8 @@ vagrant up && vagrant ssh
 
 `vagrant ssh` gets you inside the VM console.
 
+`vagrant halt` turns off the virtual machine
+
 
 ## Shared folders
 
